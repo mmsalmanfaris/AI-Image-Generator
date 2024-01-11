@@ -45,3 +45,93 @@
     font-size: 15px;
     margin-top: 10px;
   }
+
+  .genarate-form{
+    height: 56px;
+    width: 100%;
+    display: flex;
+    padding: 6px;
+    margin: 45px 0 15px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 30px;
+    background-color: white;
+  }
+
+  .genarate-form .prompt-input{
+    background: none;
+    border: none;
+    padding: 0 17px;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .genarate-form .control{
+    display: flex;
+    gap: 15px;
+  }
+
+  .genarate-form .img-quantity{
+    background: none;
+    border: none;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .genarate-form .generate-btn{
+    border: none;
+    padding-right: 17px;
+    font-size: 14px;
+    outline: none;
+    background-color: rgb(56, 56, 236);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 12px 25px;
+  }
+
+ .image-gallery{
+  display: flex;
+  gap: 15px;
+  padding: 0 15px;
+  max-width: 1250px;
+  margin: 50px 0;
+ }
+
+  .image-gallery .image-card{
+    width: 285px;
+    aspect-ratio: 1 / 1;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .image-gallery .image-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+  .image-gallery .image-card .download_btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-self: center;
+  }
+
+
+
+  .image-gallery .image-card .download_btn img{
+    height: 14px;
+    width: 14px;
+  }
