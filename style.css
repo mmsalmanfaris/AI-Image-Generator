@@ -5,40 +5,42 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 
   .image-genarator{
-    background: url("images/bg.jpg");
-    height: 300px;
+    height: 40vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-position: center;
+    justify-content: center;
+    position: relative;
+    background: url("images/bg.jpg");
     background-size: cover;
+    background-position: center;
   }
 
   .image-genarator::before{
     content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    position: absolute;
-    background: black;
     opacity: 0.5;
-    height: 300px
+    background: #121212;
   }  
 
   .image-genarator .content{
-    color: white;
+    position: relative;
+    color: #fff;
+    padding: 0 15px;
     max-width: 760px;
     text-align: center;
-    padding: 0 20px;
-    position: relative;
   }
 
   .image-genarator h1{
-    font-size: 38px;
-    width: 700px;
+    font-size: 2.5rem;
+    font-weight: 700;
   }
 
   .image-genarator p{
@@ -95,18 +97,23 @@
 
  .image-gallery{
   display: flex;
+  flex-wrap: wrap;
   gap: 15px;
   padding: 0 15px;
   max-width: 1250px;
-  margin: 50px 0;
+  margin: 20px 0;
  }
 
   .image-gallery .image-card{
     width: 285px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     aspect-ratio: 1 / 1;
     border-radius: 5px;
     overflow: hidden;
     position: relative;
+    background-color: #f2f2f2;
   }
 
   .image-gallery .image-card img{
@@ -115,6 +122,11 @@
     object-fit: cover;
   }
 
+  .image-gallery .image-card.loading img
+  {
+    height: 80px;
+    width: 80px;
+  }
 
   .image-gallery .image-card .download_btn {
     position: absolute;
@@ -126,12 +138,61 @@
     display: flex;
     border-radius: 50%;
     align-items: center;
-    justify-self: center;
+    justify-content: center;
+    display: none;
   }
 
-
+.image-gallery .image-card:not(.loading):hover .download_btn
+{
+  display: flex;
+}
 
   .image-gallery .image-card .download_btn img{
     height: 14px;
     width: 14px;
+  }
+
+  @media screen and (max-width: 760px) {
+
+    .image-genarator h1{
+      font-size: 1.8rem
+    }
+
+    .image-genarator p{
+      font-size: 1rem;
+    }
+
+    .image-genarator .genarate-form{
+      margin-top: 30px;
+      height: 52px;
+      display: block;
+    }
+
+    .genarate-form .control{
+      height: 40px;
+      margin-top: 15px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .genarate-form .img-quantity{
+      color: white;
+    }
+
+    .genarate-form .img-quantity option{
+      color: black;
+    }
+
+    .genarate-form .generate-btn{
+      padding: 8px 12px;    }
+
+    .image-gallery .image-card:not(.loading) .download_btn{
+      display: flex;
+    }
+
+    .image-gallery{
+      align-items: center;
+      justify-content: center;
+    }
+
   }
