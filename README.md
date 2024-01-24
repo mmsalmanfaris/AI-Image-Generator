@@ -1,0 +1,1 @@
+I learned this process by watching YouTube tutorials and encountered errors. To address the issues, I copied and pasted some JavaScript code snippets. Additionally, I attempted to connect to the OpenAI API, but unfortunately, it wasn't functional due to an expired API payment. You may want to explore using another API, such as an image generator, for a similar purpose.
