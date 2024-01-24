@@ -2,7 +2,7 @@ const generateForm = document.querySelector(".generate-form");
 const generateBtn = generateForm.querySelector(".generate-btn");
 const imageGallery = document.querySelector(".image-gallery");
 
-const OPENAI_API_KEY = "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"; 
+const OPENAI_API_KEY = "{API}";
 let isImageGenerating = false;
 
 const updateImageCard = (imgDataArray) => {
@@ -10,10 +10,10 @@ const updateImageCard = (imgDataArray) => {
     const imgCard = imageGallery.querySelectorAll(".img-card")[index];
     const imgElement = imgCard.querySelector("img");
     const downloadBtn = imgCard.querySelector(".download-btn");
-    
+
     const aiGeneratedImage = `data:image/jpeg;base64,${imgObject.b64_json}`;
     imgElement.src = aiGeneratedImage;
-    
+
     imgElement.onload = () => {
       imgCard.classList.remove("loading");
       downloadBtn.setAttribute("href", aiGeneratedImage);
@@ -38,9 +38,9 @@ const generateAiImages = async (userPrompt, userImgQuantity) => {
       }),
     });
 
-    if(!response.ok) throw new Error("Failed to generate AI images. Make sure your API key is valid.");
+    if (!response.ok) throw new Error("Failed to generate AI images. Make sure your API key is valid.");
 
-    const { data } = await response.json(); 
+    const { data } = await response.json();
     updateImageCard([...data]);
   } catch (error) {
     alert(error.message);
@@ -53,17 +53,17 @@ const generateAiImages = async (userPrompt, userImgQuantity) => {
 
 const handleImageGeneration = (e) => {
   e.preventDefault();
-  if(isImageGenerating) return;
+  if (isImageGenerating) return;
 
   const userPrompt = e.srcElement[0].value;
   const userImgQuantity = parseInt(e.srcElement[1].value);
-  
+
   generateBtn.setAttribute("disabled", true);
   generateBtn.innerText = "Generating";
   isImageGenerating = true;
-  
-  const imgCardMarkup = Array.from({ length: userImgQuantity }, () => 
-      `<div class="img-card loading">
+
+  const imgCardMarkup = Array.from({ length: userImgQuantity }, () =>
+    `<div class="img-card loading">
         <img src="images/loader.svg" alt="AI generated image">
         <a class="download-btn" href="#">
           <img src="images/download.svg" alt="download icon">
